@@ -8,9 +8,10 @@ const NavigationBar = () => {
             <div className="mw-1500">
                 <div className="wrapper">
                     <div className="left">
-                        <Navbar.Brand href="#home">
-                            <img src="./logo-juli.svg" alt="Juli Ramon | Frontend Developer" />
-                        </Navbar.Brand>
+                        <div className="avatar">
+                            <img src="./avatar-juli.jpeg" alt="Juli Ramon | Frontend Developer"/>
+                        </div>
+                        <Nav.Link href="mailto:hi@juliramon.com">hi@juliramon.com</Nav.Link>
                     </div>
                     <div className="right">
                         <Nav.Link href="https://www.linkedin.com/in/juliramon">
