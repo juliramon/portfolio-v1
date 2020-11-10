@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800");
+
+$dark: #0c3566;
+$grey: #58708d;
+$blue: #1d7cee;
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "M PLUS Rounded 1c", sans-serif !important;
+	font-size: 16px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	color: $blue;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.mw-1500 {
+	max-width: 1500px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.wrapper {
+	display: flex;
+}
+
+nav {
+	.wrapper {
+		padding: 30px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.right {
+			display: flex;
+			flex-direction: row;
+		}
+		img {
+			width: 40px;
+			height: auto;
+		}
+		svg {
+			stroke: $grey;
+		}
+	}
+}
+
+header {
+	span {
+		font-size: 4em;
+		font-weight: bold;
+		color: $dark;
+	}
+	.wrapper {
+		flex-direction: column;
+		max-width: 600px;
+	}
+	.header-title {
+		font-size: 2em;
+		font-weight: bold;
+		margin-bottom: 30px;
+		color: $dark;
+	}
+	.header-intro p {
+		font-size: 1.4em;
+		line-height: 1.6em;
+		font-weight: 400;
+		color: $grey;
+	}
+	.header-section {
+		padding: 18px 0;
+		h2 {
+			font-size: 1.1em;
+			font-weight: 500;
+			margin-bottom: 20px;
+			color: $dark;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: -10px;
+			display: flex;
+			align-items: center;
+		}
+		li img {
+			width: 30px;
+			height: 30px;
+			margin: 10px;
+		}
+	}
+}
