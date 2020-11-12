@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 import Head from 'next/head'
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col, Button} from 'react-bootstrap';
 
 const Header = () => {
+    const initialState = {
+        activeTab: 'about'
+    }
+    
+    const [state, setState] = useState(initialState)
+
+    const aboutMe = <>
+        <h1 className="header-title">Hi 🤟 I'm Juli, a creative frontend developer<br/> on a permanent mission to make digital products fancier and valuable. Passionate about great user experiences<br/> and human behaviour.</h1>
+        <div className="header-intro">
+            <p>Currently leading the product development, design and communication at <a href="https://www.innoget.com" title="Innoget.com" rel="nofollow noreferrer" target="_blank">Innoget.com</a>.</p>
+            <p>Creator of <a href="https://www.escapadesenparella.cat" tile="Escapadesenparella.cat" rel="nofollow noreferrer" target="_blank">Escapadesenparella.cat</a>. Awarded entrepreneur and speaker.</p>
+            <p>Responsible, committed to my work, highly curious and efficient problem solver.</p>
+        </div>
+    </>
+
+    let displaySection;
+
+    switch(state.activeTab) {
+        case 'about':
+            displaySection = aboutMe
+    }
+    
     return (
         <>
             <Head>
@@ -47,45 +69,71 @@ const Header = () => {
             </Head>
             <header className="mw-1500">
                 <div className="wrapper">
-                    <h1 className="header-title">I'm Juli, a junior frontend developer on a permanent mission to make digital products fancier and valuable. Passionate about great user experiences<br/> and human behaviour.</h1>
-                    <div className="header-intro">
-                        <p>Currently leading the product development, design and communication at <a href="https://www.innoget.com" title="Innoget.com" rel="nofollow noreferrer" target="_blank">Innoget.com</a>.</p>
-                        <p>Creator of <a href="https://www.escapadesenparella.cat" tile="Escapadesenparella.cat" rel="nofollow noreferrer" target="_blank">Escapadesenparella.cat</a>. Awarded entrepreneur and speaker. Responsible, committed to my work, highly curious and efficient problem solver.</p>
-                    </div>
-                    <div className="header-section">
-                        <div className="tech-stack">
-                            <h2>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-code" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#1D7CEE" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="left card user">
+                        <div className="card-block">
+                            <Button className="active">
+                                <div className="card-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </div>
+                                <div className="card-right">
+                                    <span>About me</span>
+                                </div>
+                            </Button>
+                        </div>
+                        <div className="card-block">
+                            <Button className="disabled">
+                                <div className="card-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-notebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <polyline points="7 8 3 12 7 16" />
-                                    <polyline points="17 8 21 12 17 16" />
-                                    <line x1="14" y1="4" x2="10" y2="20" />
-                                </svg>Tech Stack</h2>
-                            <ul>
-                                <li><img src="./html5.svg" alt=""/></li>
-                                <li><img src="./css3.svg" alt=""/></li>
-                                <li><img src="./javascript.svg" alt=""/></li>
-                                <li><img src="./react.svg" alt=""/></li>
-                                <li><img src="./next-dot-js.svg" alt=""/></li>
-                                <li><img src="./sass.svg" alt=""/></li>
-                                <li><img src="./bootstrap.svg" alt=""/></li>
-                                <li><img src="./node-dot-js.svg" alt=""/></li>
-                                <li><img src="./mongodb.svg" alt=""/></li>
-                                <li><img src="./git.svg" alt=""/></li>
-                                <li><img src="./github.svg" alt=""/></li>
-                                <li><img src="./postman.svg" alt=""/></li>
-                            </ul>
+                                    <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" />
+                                    <line x1="13" y1="8" x2="15" y2="8" />
+                                    <line x1="13" y1="12" x2="15" y2="12" />
+                                </svg>
+                                </div>
+                                <div className="card-right">
+                                    <span>Resume</span>
+                                </div>
+                            </Button>
                         </div>
-                        <div className="design-stack">
-                            <h2>Design Stack</h2>
-                            <ul>
-                                <li><img src="./sketch.svg" alt=""/></li>
-                                <li><img src="./invision.svg" alt=""/></li>
-                                <li><img src="./adobephotoshop.svg" alt=""/></li>
-                                <li><img src="./adobeillustrator.svg" alt=""/></li>
-                                <li><img src="./adobelightroomcc.svg" alt=""/></li>
-                            </ul>
+                        <div className="card-block">
+                            <Button className="disabled">
+                                <div className="card-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-clipboard-list" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+                                    <rect x="9" y="3" width="6" height="4" rx="2" />
+                                    <line x1="9" y1="12" x2="9.01" y2="12" />
+                                    <line x1="13" y1="12" x2="15" y2="12" />
+                                    <line x1="9" y1="16" x2="9.01" y2="16" />
+                                    <line x1="13" y1="16" x2="15" y2="16" />
+                                </svg>
+                                </div>
+                                <div className="card-right">
+                                    <span>Projects</span>
+                                </div>
+                            </Button>
                         </div>
+                        <div className="card-block">
+                            <Button className="disabled">
+                                <div className="card-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-inbox" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                                    <path d="M4 13h3l3 3h4l3 -3h3" />
+                                </svg>
+                                </div>
+                                <div className="card-right">
+                                    <span>Contact</span>
+                                </div>
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="right">
+                        {displaySection}
                     </div>
                 </div>
             </header>

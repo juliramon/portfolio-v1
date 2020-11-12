@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
 $dark: #0c3566;
 $grey: #58708d;
 $softGrey: #cedbe7;
 $blue: #1d7cee;
+$softBlue: #e8f1fd;
 
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Inter", sans-serif !important;
+	font-family: "Nunito", sans-serif !important;
 	font-size: 16px;
 }
 
@@ -33,35 +34,83 @@ a {
 	display: flex;
 }
 
+.avatar-l {
+	width: 120px;
+	height: 120px;
+}
+
+.avatar-m {
+	width: 80px;
+	height: 80px;
+}
+
+.avatar-s {
+	width: 40px;
+	height: 40px;
+}
+
+.avatar img {
+	border-radius: 100px;
+}
+
+.card {
+	padding: 20px;
+	border-radius: 8px !important;
+	border-color: $softGrey !important;
+}
+
+button,
+.btn,
+.btn-primary.focus,
+.btn-primary:focus {
+	box-shadow: none !important;
+}
+
 nav {
 	a {
 		color: $grey;
 		font-weight: 600;
 	}
 	.wrapper {
-		padding: 30px 0;
+		padding: 20px 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		.left {
 			display: flex;
 			align-items: center;
-			.avatar {
-				margin-right: 15px;
-				img {
-					width: 40px;
+			.card-block,
+			button {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				color: $dark;
+				.card-left {
+					margin-right: 15px;
 					height: 40px;
-					border-radius: 100px;
+					width: 40px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+				.user-name {
+					font-size: 1.4em;
+					margin: 0;
+					font-weight: bold;
+				}
+				.user-position {
+					margin: 0;
+					font-weight: 400;
 				}
 			}
 		}
 		.right {
 			display: flex;
 			flex-direction: row;
-			margin: -5px;
+			margin: -8px;
 			svg {
 				stroke: $grey;
-				margin: 5px;
+				margin: 8px;
 			}
 		}
 		.nav-link {
@@ -72,65 +121,76 @@ nav {
 
 header {
 	padding-top: 50px;
-	span {
-		font-size: 2.5em;
-		font-weight: bold;
-		color: $dark;
+	.wrapper {
+		.left.card.user {
+			width: 20%;
+			border: none !important;
+			padding: 0;
+			button {
+				margin: 4px 0;
+				background-color: #fff;
+				border: none;
+				border-radius: 100px;
+				font-size: 1.1em;
+				transition: 0.4s;
+				font-weight: 700;
+				padding: 10px 25px 10px 20px;
+			}
+			button.active {
+				background-color: $softBlue !important;
+				color: $blue !important;
+				svg {
+					stroke: $blue;
+				}
+			}
+			button.disabled {
+				cursor: not-allowed;
+			}
+			button:hover,
+			button.active:hover {
+				background-color: $softBlue;
+				color: $dark;
+			}
+			svg {
+				stroke: $dark;
+			}
+			.card-block,
+			button {
+				display: flex;
+				align-items: center;
+				color: $dark;
+				.card-left {
+					margin-right: 15px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+		.right {
+			width: 70%;
+			.header-intro {
+				margin-top: 30px;
+				p {
+					margin: 0;
+					font-size: 1.3em;
+					color: $grey;
+				}
+			}
+		}
 	}
+}
+
+footer {
+	position: fixed;
+	left: 15px;
+	bottom: 15px;
 	.wrapper {
 		flex-direction: column;
 	}
-	.header-title {
-		font-size: 3.2em;
-		margin-bottom: 10px;
-		font-weight: 600;
-		color: $dark;
-	}
-	.header-intro {
-		margin-top: 30px;
-	}
-	.header-intro p {
-		font-size: 1.2em;
-		line-height: 1.6em;
-		font-weight: 400;
-		color: $grey;
+	p {
 		margin: 0;
-	}
-	.header-section {
-		padding: 18px 0;
-		display: flex;
-		align-items: flex-start;
-		margin-top: 30px;
-		svg {
-			background-color: #e8f1fd;
-			border-radius: 100px;
-			padding: 5px;
-			margin-right: 10px;
-		}
-		.tech-stack {
-			padding-right: 50px;
-			border-right: 1px solid $softGrey;
-			margin-right: 50px;
-		}
-		h2 {
-			font-size: 1em;
-			text-transform: uppercase;
-			letter-spacing: 0.3em;
-			font-weight: 600;
-			margin-bottom: 20px;
-			color: $dark;
-		}
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: -10px;
-			display: flex;
-			align-items: center;
-		}
-		li img {
-			width: 30px;
-			height: 30px;
-			margin: 10px;
-		}
+		font-size: 0.8em;
+		color: $grey;
 	}
 }
