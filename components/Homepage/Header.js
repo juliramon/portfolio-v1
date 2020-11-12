@@ -40,7 +40,7 @@ const Header = () => {
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:title"
-					content={`Juli Ramon | Frontend Developer`}
+					content={`Juli Ramon – Frontend Developer`}
 				/>
 				<meta
 					property="og:description"
@@ -50,12 +50,12 @@ const Header = () => {
 					property="url"
 					content={`https://juliramon.com`}
 				/>
-				<meta property="og:site_name" content="Escapadesenparella.cat" />
+				<meta property="og:site_name" content="Juli Ramon – Frontend Developer" />
 				<meta property="og:locale" content="ca_ES" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta
 					name="twitter:title"
-					content={`Juli Ramon | Frontend Developer`}
+					content={`Juli Ramon – Frontend Developer`}
 				/>
 				<meta
 					name="twitter:description"
