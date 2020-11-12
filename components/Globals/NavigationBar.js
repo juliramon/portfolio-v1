@@ -1,6 +1,5 @@
 import React from 'react';
 import {Navbar, Nav, Container, Row, Button} from 'react-bootstrap'
-import Header from './Header';
 
 const NavigationBar = () => {
     return (
@@ -8,9 +7,19 @@ const NavigationBar = () => {
             <div className="mw-1500">
                 <div className="wrapper">
                     <div className="left">
-                        <Navbar.Brand href="#home">
-                            <img src="./logo-juli.svg" alt="Juli Ramon | Frontend Developer" />
-                        </Navbar.Brand>
+                        <div className="card-block">
+                            <div className="card-left">
+                                <div className="avatar">
+                                    <img src="./avatar-juli.jpeg" className="avatar-s"/>
+                                </div>
+                            </div>
+                            <div className="card-right">
+                                <div className="user-details">
+                                    <h1 className="user-name">Juli Ramon</h1>
+                                    <p className="user-position">Frontend Developer</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="right">
                         <Nav.Link href="https://www.linkedin.com/in/juliramon">
