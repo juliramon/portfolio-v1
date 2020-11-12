@@ -111,6 +111,12 @@ nav {
 			svg {
 				stroke: $grey;
 				margin: 8px;
+				transition: ease-in-out 0.5s;
+			}
+			svg:hover {
+				fill: $grey;
+				stroke: white;
+				transform: scale(1.5);
 			}
 		}
 		.nav-link {
@@ -143,9 +149,6 @@ header {
 					stroke: $blue;
 				}
 			}
-			button.disabled {
-				cursor: not-allowed;
-			}
 			button:hover,
 			button.active:hover {
 				background-color: $softBlue;
@@ -175,6 +178,23 @@ header {
 					margin: 0;
 					font-size: 1.3em;
 					color: $grey;
+				}
+			}
+			.work-in-progress {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.image-wrapper {
+					margin-top: 30px;
+					mask-image: url("../public/oval.svg");
+					mask-repeat: no-repeat;
+					width: 315px;
+					img {
+						width: 500px;
+						position: relative;
+						left: -65px;
+						top: -30px;
+					}
 				}
 			}
 		}
