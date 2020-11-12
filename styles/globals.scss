@@ -194,3 +194,63 @@ footer {
 		color: $grey;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	nav {
+		.card-block {
+			.user-details {
+				.user-name {
+					font-size: 1.1em !important;
+				}
+				.user-position {
+					font-size: 0.9em;
+				}
+			}
+		}
+		svg {
+			width: 25px;
+			height: 25px;
+		}
+	}
+	header {
+		padding-top: 10px;
+		.wrapper {
+			flex-direction: column-reverse;
+			.left.card.user {
+				width: 100%;
+				position: fixed;
+				z-index: 1000;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				background-color: white;
+				border-top: 1px solid $softGrey !important;
+				border-radius: 0 !important;
+				bottom: 0;
+				button {
+					margin: 8px 0;
+					height: 50px;
+					width: 50px;
+					justify-content: center;
+					padding: 10px 20px;
+				}
+				.card-left {
+					margin-right: 0 !important;
+				}
+				.card-right {
+					display: none;
+				}
+			}
+			.right {
+				width: 100%;
+				padding: 0 20px;
+				.header-title {
+					font-size: 1.8em;
+				}
+				.header-intro p {
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+}
