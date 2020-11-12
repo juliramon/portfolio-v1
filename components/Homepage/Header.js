@@ -18,11 +18,45 @@ const Header = () => {
         </div>
     </>
 
+    const resume = (
+    <div className="work-in-progress">
+        <h1 className="header-title">Still working on this.<br/>Meanwhile, here's a bear<br/> playing a guitar</h1> 
+        <div className="image-wrapper">
+            <img src="https://media.giphy.com/media/InketCaEF5OOQ/source.gif" alt="Bear playing a guiter" />
+        </div>
+    </div>)
+    
+    const projects = (
+    <div className="work-in-progress">
+        <h1 className="header-title">Still working on this.<br/>Meanwhile, here's a bear<br/> playing a guitar</h1> 
+        <div className="image-wrapper">
+            <img src="https://media.giphy.com/media/InketCaEF5OOQ/source.gif" alt="Bear playing a guiter" />
+        </div>
+    </div>)
+
+    const contact = (
+    <div className="work-in-progress">
+        <h1 className="header-title">Still working on this.<br/>Meanwhile, here's a bear<br/> playing a guitar</h1> 
+        <div className="image-wrapper">
+            <img src="https://media.giphy.com/media/InketCaEF5OOQ/source.gif" alt="Bear playing a guiter" />
+        </div>
+    </div>)
+
     let displaySection;
 
     switch(state.activeTab) {
         case 'about':
-            displaySection = aboutMe
+            displaySection = aboutMe;
+            break;
+        case 'resume':
+            displaySection = resume;
+            break;
+        case 'projects':
+            displaySection = projects;
+            break;
+        case 'contact':
+            displaySection = contact;
+            break;
     }
     
     return (
@@ -69,9 +103,9 @@ const Header = () => {
             </Head>
             <header className="mw-1500">
                 <div className="wrapper">
-                    <div className="left card user">
+                    <aside className="left card user">
                         <div className="card-block">
-                            <Button className="active">
+                            <Button className={state.activeTab === 'about' ? 'active' : null} onClick={() => setState({...state, activeTab: 'about'})}>
                                 <div className="card-left">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -85,7 +119,7 @@ const Header = () => {
                             </Button>
                         </div>
                         <div className="card-block">
-                            <Button className="disabled">
+                            <Button className={state.activeTab === 'resume' ? 'active' : null} onClick={() => setState({...state, activeTab: 'resume'})}>
                                 <div className="card-left">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-notebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -100,7 +134,7 @@ const Header = () => {
                             </Button>
                         </div>
                         <div className="card-block">
-                            <Button className="disabled">
+                            <Button className={state.activeTab === 'projects' ? 'active' : null} onClick={() => setState({...state, activeTab: 'projects'})}>
                                 <div className="card-left">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-clipboard-list" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -118,7 +152,7 @@ const Header = () => {
                             </Button>
                         </div>
                         <div className="card-block">
-                            <Button className="disabled">
+                            <Button className={state.activeTab === 'contact' ? 'active' : null} onClick={() => setState({...state, activeTab: 'contact'})}>
                                 <div className="card-left">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-inbox" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -131,7 +165,7 @@ const Header = () => {
                                 </div>
                             </Button>
                         </div>
-                    </div>
+                    </aside>
                     <div className="right">
                         {displaySection}
                     </div>
