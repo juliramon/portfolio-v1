@@ -24,6 +24,10 @@ a {
 	box-sizing: border-box;
 }
 
+h2 {
+	font-size: 1.5em !important;
+}
+
 .mw-1500 {
 	max-width: 1500px;
 	margin: 0 auto;
@@ -196,6 +200,30 @@ header {
 						top: -30px;
 					}
 				}
+			}
+		}
+	}
+}
+
+.card-wrapper {
+	margin-bottom: 20px;
+	.left {
+		margin-right: 22px;
+		img {
+			height: 45px;
+			width: 45px;
+		}
+	}
+	.right {
+		ul:first-child {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			.tasks {
+				margin: 8px 0 0 0;
+				padding: 0 0 0 20px;
+				font-size: 0.9em;
+				color: $grey;
 			}
 		}
 	}
