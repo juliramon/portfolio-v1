@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head'
+import Resume from '../Homepage/Resume'
 import {Container, Row, Col, Button} from 'react-bootstrap';
 
 const Header = () => {
@@ -18,13 +19,7 @@ const Header = () => {
         </div>
     </>
 
-    const resume = (
-    <div className="work-in-progress">
-        <h1 className="header-title">Still working on this.<br/>Meanwhile, here's a bear<br/> playing a guitar</h1> 
-        <div className="image-wrapper">
-            <img src="https://media.giphy.com/media/InketCaEF5OOQ/source.gif" alt="Bear playing a guiter" />
-        </div>
-    </div>)
+    const resume = <Resume />
     
     const projects = (
     <div className="work-in-progress">
@@ -107,14 +102,15 @@ const Header = () => {
                         <div className="card-block">
                             <Button className={state.activeTab === 'about' ? 'active' : null} onClick={() => setState({...state, activeTab: 'about'})}>
                                 <div className="card-left">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-home" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                        <circle cx="12" cy="7" r="4" />
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
                                     </svg>
                                 </div>
                                 <div className="card-right">
-                                    <span>About me</span>
+                                    <span>Home</span>
                                 </div>
                             </Button>
                         </div>
